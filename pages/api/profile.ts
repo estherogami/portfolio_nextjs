@@ -1,8 +1,22 @@
 import dbConnect from "../../lib/dbConnect";
 import Profile from "../../models/profile/Profile";
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { IProfile } from "../../models/profile/types";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+import type { NextApiRequest, NextApiResponse } from "next";
+
+
+interface ExtendedNextApiRequest extends NextApiRequest {
+  body: {
+    id?: number;
+    profile?: IProfile;
+  };
+}
+
+
+export default async function handler(
+  req: ExtendedNextApiRequest,
+  res: NextApiResponse
+) {
   const { method } = req;
 
   //Connect to db
@@ -11,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   );
 
   switch (method) {
-    case "GET": //Get
+    case "GET":
       try {
         const profile = await Profile.find({});
         res.status(200).json({ message: "Got profile data", data: profile });
@@ -21,10 +35,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
       break;
 
-    case "POST": //Create
-      //Validate req.body
+    case "POST":
+      //Create
       try {
-        const profile = await Profile.create(req.body);
+        const profile = await Profile.create(req.body.profile);
         res.status(201).json({ message: "Profile created", data: profile });
       } catch (err) {
         console.log(err);
@@ -32,8 +46,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
       break;
 
-    case "PATCH": //Update
-      //Valdidate req.body  (req.body.id, req.body.profile)
+    case "PATCH":
       try {
         const profile = await Profile.findByIdAndUpdate(
           req.body.id,
@@ -51,3 +64,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       break;
   }
 }
+
