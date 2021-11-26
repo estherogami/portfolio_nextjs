@@ -1,7 +1,8 @@
 import dbConnect from "../../lib/dbConnect";
-import Profile from "../../models/Profile";
+import Profile from "../../models/profile/Profile";
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
 
   //Connect to db
