@@ -24,7 +24,7 @@ export default async function handler(
   const { method } = req;
 
   //Connect to db
-  await dbConnect().catch((error) =>
+  await dbConnect().catch((err) =>
     res.status(500).json({ message: "Failed to connect to Database" })
   );
 
