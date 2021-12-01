@@ -7,7 +7,7 @@ import { IProject } from "../../../models/project/types";
 //Response model
 interface ResponseData {
   message: string;
-  data?: IProject;
+  data?: IProject | IProject[];
 }
 
 
@@ -25,8 +25,17 @@ export default async function handler(
 
   switch (method) {
     case "GET":
+      try{
+        const projects = await Project.find({});
+        res.status(200).json({ message: "Got projects data", data: projects });
+      }catch(err){
+        console.log(err)
+        res.status(400).json({ message: "Could not retrieve projects list" });
+      }
       //code
       break;
+
+
     case "POST":
       //Add checks for body request type   
       //req.body.project try creating a generic function
@@ -41,6 +50,8 @@ export default async function handler(
         res.status(400).json({ message: "Couldnt create profile" });
       }
       break;
+
+      
     case "PATCH":
       //code
       break;
