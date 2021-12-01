@@ -12,10 +12,13 @@ import type { NextApiRequest, NextApiResponse } from "next";
 //   };
 // }
 
+
+//Response model
 interface ResponseData {
   message: string;
   data?: IProfile;
 }
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -40,18 +43,18 @@ export default async function handler(
       }
       break;
 
-    case "POST":
-      //Add checks for body request type
+    // case "POST":
+    //   //Add checks for body request type
 
-      //Create
-      try {
-        const profile = await Profile.create(req.body.profile);
-        res.status(201).json({ message: "Profile created", data: profile });
-      } catch (err) {
-        console.log(err);
-        res.status(400).json({ message: "Couldnt create profile" });
-      }
-      break;
+    //   //Create
+    //   try {
+    //     const profile = await Profile.create(req.body.profile);
+    //     res.status(201).json({ message: "Profile created", data: profile });
+    //   } catch (err) {
+    //     console.log(err);
+    //     res.status(400).json({ message: "Couldnt create profile" });
+    //   }
+    //   break;
 
     case "PATCH":
       //Add checks for body request type
