@@ -1,18 +1,20 @@
 import ProjectListItem from "./projectListItem";
-import styles from "./projectList.module.css";
-const ProjectList = () => {
-    return (
-        <ul className={styles.ProjectList}>
-            <ProjectListItem />
-            <ProjectListItem />
-            <ProjectListItem />
-            <ProjectListItem />
-            <ProjectListItem />
-            <ProjectListItem />
-            <ProjectListItem />
+import { IProject } from "../../models/project/types";
 
-        </ul>
-    );
+import styles from "./projectList.module.css";
+
+
+interface IProjectListProps {
+  data: IProject[];
+}
+
+const ProjectList = ({ data }: IProjectListProps) => {
+   
+  return (
+    <ul className={styles.ProjectList}>
+      { data.map( (project, index) => <ProjectListItem key={index} data={project} />)} 
+    </ul>
+  );
 };
 
 export default ProjectList;

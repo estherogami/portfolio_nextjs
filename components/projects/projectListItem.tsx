@@ -1,7 +1,14 @@
 import { Fragment } from "react";
+import { IProject } from "../../models/project/types";
+
 import styles from "./projectListItem.module.css";
 
-const ProjectListItem = () => {
+
+interface IProjectListItemProps{
+  data: IProject;
+}
+
+const ProjectListItem = ({data}: IProjectListItemProps) => {
   return (
     <Fragment>
       <li className={styles.ProjectListItem}>

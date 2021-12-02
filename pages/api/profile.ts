@@ -4,15 +4,6 @@ import { IProfile } from "../../models/profile/types";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
-// interface ExtendedNextApiRequest extends NextApiRequest {
-//   //Request body types validator
-//   body: {
-//     id?: number;
-//     profile?: IProfile;
-//   };
-// }
-
-
 //Response model
 interface ResponseData {
   message: string;

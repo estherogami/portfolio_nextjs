@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 import {IContact, IProfile, ISkill } from "./types";
 
 //Subdocuments -------------------
@@ -28,5 +28,5 @@ export const ProfileSchema = new Schema<IProfile>({
 
 
 //module.exports = mongoose.models.Profile || mongoose.model("Profile", ProfileSchema);
-const Profile = model<IProfile>("Profile", ProfileSchema);
+const Profile = models.Profile || model<IProfile>("Profile", ProfileSchema);
 export default Profile;

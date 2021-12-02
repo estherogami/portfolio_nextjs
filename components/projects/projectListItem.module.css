@@ -1,7 +1,7 @@
 .ProjectListItem{
     width: 150px;
-    background: #EC985A;
-    color: white;
+    /* background: #EC985A; */
+    color: black;
     margin: 0 1rem 1rem 0;
     display: inline-block;
     width: 100%;
