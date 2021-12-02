@@ -1,24 +1,28 @@
 import { Fragment } from "react";
 import { IProject } from "../../models/project/types";
+import Image from "next/image";
 
 import styles from "./projectListItem.module.css";
+import { Spinner } from "react-bootstrap";
 
-
-interface IProjectListItemProps{
+interface IProjectListItemProps {
   data: IProject;
 }
 
-const ProjectListItem = ({data}: IProjectListItemProps) => {
+const ProjectListItem = ({ data }: IProjectListItemProps) => {
+  const { title, featured_picture: picture, category } = data;
+
   return (
     <Fragment>
       <li className={styles.ProjectListItem}>
         <header>
-          <h2>Title</h2>
-          <p>Type</p>
+          <h2>{title}</h2>
+          <p>{category}</p>
         </header>
-        Project Item
+        <div>
+          <Image src={picture} layout="responsive" height={1000} width={400} objectFit="contain" alt={title} loading="lazy" />
+        </div>
       </li>
-      <li className={styles.ProjectListItem}>Project Item but a long one</li>
     </Fragment>
   );
 };

@@ -14,10 +14,10 @@ interface IProjectProps {
 
 export default function Home({ projectsData }: IProjectProps) {
   const [projects, setProjects] = useState<IProject[]>(projectsData);
-  console.log(projects)
 
   return (
     <Fragment>
+      {/* intro */}
       <ProjectList data={projects} />
       {/* projectpopup */}
     </Fragment>

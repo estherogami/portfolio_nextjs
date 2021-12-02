@@ -9,10 +9,9 @@ interface IProjectListProps {
 }
 
 const ProjectList = ({ data }: IProjectListProps) => {
-   
   return (
     <ul className={styles.ProjectList}>
-      { data.map( (project, index) => <ProjectListItem key={index} data={project} />)} 
+      { data.map( (project, index) => <ProjectListItem key={project._id} data={project} />)} 
     </ul>
   );
 };

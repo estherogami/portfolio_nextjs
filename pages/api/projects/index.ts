@@ -1,6 +1,6 @@
 import dbConnect from "../../../lib/dbConnect";
 import type { NextApiRequest, NextApiResponse } from "next";
-import Project from "../../../models/project/Project";
+import Projects from "../../../models/project/Project";
 import { IProject } from "../../../models/project/types";
 
 
@@ -26,7 +26,7 @@ export default async function handler(
   switch (method) {
     case "GET":
       try{
-        const projects = await Project.find({});
+        const projects = await Projects.find({});
         res.status(200).json({ message: "Got projects data", data: projects });
       }catch(err){
         console.log(err)
@@ -41,7 +41,7 @@ export default async function handler(
       //req.body.project try creating a generic function
  
       try {
-        const project = await Project.create(req.body.project);
+        const project = await Projects.create(req.body.project);
         res
           .status(201)
           .json({ message: "Project succesfully created", data: project });

@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/api/profile.ts", "models/profile/Profile.ts"  ],
+, "pages/api/profile.ts", "models/profile/Profile.ts", "models/project/Project.js", "models/project/Project.js"  ],
   "exclude": [
     "node_modules"
   ]

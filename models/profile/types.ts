@@ -5,6 +5,7 @@ export enum mastery {
     "middle", 
     "advanced"
   }
+
   
   //Interfaces for docs and subdocs
   export interface IProfile {

@@ -1,4 +1,4 @@
-import {Schema, model, models} from "mongoose";
+import {Schema, model, models, Model} from "mongoose";
 import { IProject } from "./types";
 
 
@@ -9,5 +9,9 @@ export const ProjectSchema = new Schema<IProject>({
     link: String
 })
 
-const Project = models.Profile || model<IProject>("Projects",ProjectSchema);
-export default Project;
+
+
+//const Project = models.Project || model<IProject>("Projects",ProjectSchema) ;
+//export default Project;
+
+export default models?.Projects || model<IProject>("Projects", ProjectSchema);

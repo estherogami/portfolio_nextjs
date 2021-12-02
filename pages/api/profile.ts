@@ -1,5 +1,5 @@
 import dbConnect from "../../lib/dbConnect";
-import Profile from "../../models/profile/Profile";
+import {Profile} from "../../models/profile/Profile";
 import { IProfile } from "../../models/profile/types";
 
 import type { NextApiRequest, NextApiResponse } from "next";
