@@ -26,7 +26,7 @@ export default function Home({ projectsData }: IProjectProps) {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const data = await getAllProjects();
-  //console.log(data.data);
+  console.log(data.data);
 
   if (!data) {
     return {
