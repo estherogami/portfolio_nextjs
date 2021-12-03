@@ -3,6 +3,7 @@
   margin-left: 75px;
 }
 
+
 @media only screen and (min-width: 768px) {
   .MainSection {
     margin-left: 21.09375vw;
@@ -11,6 +12,7 @@
 
 @media only screen and (min-width: 1280px) {
     .MainSection {
-      margin-left: 270px;
+      margin-left: 10vw;
     }
   }
+  

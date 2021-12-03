@@ -1,11 +1,15 @@
-import { Fragment } from "react";
+import { Fragment} from "react";
 import Head from "next/head";
 import MainNavigation from "./mainNavigation";
+import MouseCircle from "../ui/MouseCircle/MouseCircle";
+
 import styles from "./layout.module.css";
 
 //import MainNavigation from "./main-navigation";
 
 const Layout = (props) => {
+
+
   return (
     <Fragment>
       <Head>
@@ -17,10 +21,10 @@ const Layout = (props) => {
       <main className={`h-100 ${styles.MainWrap}`}>
         <div className="d-flex h-100">
             <MainNavigation />
-            
             <section className={`h-100 ${styles.MainSection}`}> 
               {props.children}
             </section>
+            <MouseCircle />
         </div>
       </main>
 
@@ -30,3 +34,6 @@ const Layout = (props) => {
 };
 
 export default Layout;
+
+
+
