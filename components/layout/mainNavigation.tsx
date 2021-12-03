@@ -8,7 +8,7 @@ const MainNavigation = () => {
   //Save on context
 
   return (
-    <div>
+    <aside>
       <div>Component introText</div>
       <div>logo</div>
       <div>contact</div>
@@ -18,7 +18,7 @@ const MainNavigation = () => {
         checked={ctx.themeMode}
         size={80}
       />
-    </div>
+    </aside>
   );
 };
 

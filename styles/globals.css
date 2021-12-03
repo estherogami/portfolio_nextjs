@@ -5,8 +5,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
-  --color-background: #FAFAFA;
-  --color-foreground: #1F2023;
+  --color-background: #fafafa;
+  --color-foreground: #1f2023;
   --color-primary: #eaff00;
 }
 
@@ -26,4 +26,28 @@ a {
 
 * {
   box-sizing: border-box;
+}
+main,
+h1,
+h2,
+p {
+  transition: background-color 0.7s ease-in, color 0.7s ease-out;
+}
+.dark-mode {
+  background-color: var(--color-foreground);
+}
+main section,
+aside {
+  position: relative;
+  z-index: 1;
+}
+.dark-mode,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p {
+  color: var(--color-background);
+}
+
+.dark-mode #mouse-circle {
+  mix-blend-mode: screen !important;
 }
